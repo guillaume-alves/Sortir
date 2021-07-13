@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SortiesController!{% endblock %}
+
+{% block body %}
+
+    {% for sortie in sorties %}
+
+        {{ sortie.nom }}
+        {{ sortie.duree }}
+
+    {% endfor %}
+
+{% endblock %}
