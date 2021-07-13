@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary mb-4">
+    <div class="container">
+            <a class="navbar-brand" href="{{ path('app_login') }}">Sortir.com</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample03">
+            <ul class="navbar-nav ml-auto">
+                {% if app.user %}
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Ville [admin]</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Campus [admin]</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ path('app_home') }}">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mon profil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_logout') }}">Se déconnecter</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{  path('app_login') }}">Login</a>
+                    </li>
+                {%  endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
