@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bc9e83d-4b47-4b7f-81f7-10054aed534a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210713072906.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210713080544.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210713082250.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210713083713.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210713084826.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Campus.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Etat.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Lieu.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Participant.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Sortie.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Ville.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/CampusRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/EtatRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/LieuRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/ParticipantRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/SortieRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/VilleRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,6 +188,7 @@
       <workItem from="1626103912691" duration="2143000" />
       <workItem from="1626156524588" duration="9432000" />
       <workItem from="1626168133674" duration="1903000" />
+      <workItem from="1626177416113" duration="2026000" />
     </task>
     <servers />
   </component>
