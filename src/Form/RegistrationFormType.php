@@ -26,13 +26,7 @@ class RegistrationFormType extends AbstractType
                 ->add('nom')
                 ->add('prenom')
                 ->add('email')
-                ->add('telephone')
-                ->add('imageFile', VichImageType::class, [
-                'required' => false,
-                'allow_delete' => true,
-                'download_uri' => false,
-                'label' => 'Avatar (non obligatoire)'
-                ]);
+                ->add('telephone');
 
         if ($options['firstRegistration']) {
             $builder

@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d14fcfba-9d9d-4755-8fc5-40206350eee9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210714160545.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/avatar-60ef1bcd5813b851970238.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/ParticipantAvatar.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/ParticipantAvatarFormType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/ParticipantAvatarRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/account/avatar.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccountController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Participant.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Participant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +24,9 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../Sortir\exportToHTML" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -169,6 +184,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../panterest" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -189,7 +205,7 @@
       <workItem from="1626183612848" duration="8394000" />
       <workItem from="1626195155906" duration="6732000" />
       <workItem from="1626236937072" duration="10907000" />
-      <workItem from="1626262919487" duration="14695000" />
+      <workItem from="1626262919487" duration="21535000" />
     </task>
     <servers />
   </component>

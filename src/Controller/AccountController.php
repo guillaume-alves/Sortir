@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\ParticipantAvatar;
+use App\Form\ParticipantAvatarFormType;
 use App\Form\RegistrationFormType;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
@@ -41,4 +43,26 @@ class AccountController extends AbstractController
         ]);
 
     }
+
+    /**
+     * @Route("/account/avatar", name="app_account_edit_avatar", methods={"GET", "POST"})
+     */
+    public function avatar(Request $request, EntityManagerInterface $em): Response
+    {
+        $avatar = $this->getUser()->getImage();
+        $form = $this->createForm(ParticipantAvatarFormType::class, $avatar);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em->flush();
+            $this->addFlash('success', 'Avatar mis à jour avec succès');
+            return $this->redirectToRoute('app_account');
+        }
+
+        return $this->render('account/avatar.html.twig', [
+            'form' => $form->createView()
+        ]);
+
+    }
+
+
 }

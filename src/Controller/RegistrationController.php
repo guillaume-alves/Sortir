@@ -4,8 +4,10 @@ namespace App\Controller;
 
 use App\Entity\Campus;
 use App\Entity\Participant;
+use App\Entity\ParticipantAvatar;
 use App\Form\RegistrationFormType;
 use App\Repository\CampusRepository;
+use App\Repository\ParticipantRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,7 +19,7 @@ class RegistrationController extends AbstractController
     /**
      * @Route("/register", name="app_register")
      */
-    public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, CampusRepository $campusRepository): Response
+    public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, CampusRepository $campusRepository, ParticipantRepository $participantAvatarRepository): Response
     {
         $user = new Participant();
         $form = $this->createForm(RegistrationFormType::class, $user);
