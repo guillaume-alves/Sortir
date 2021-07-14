@@ -4,17 +4,28 @@
 
 {% block body %}
     <div class="row">
-        <div class="col-md-6 mx-auto text-center">
-            <h1 class="my-5">Profile</h1>
+        <div class="col-md-6  my-auto text-center">
+
+            <h1 class="text-center">Mon profil</h1>
+
             <img src="/../images/avatar_icon.png" alt="avatar" class="rounded-circle">
-            <p> Nom : {{ app.user.nom }}</p>
-            <p> Prénom : {{ app.user.prenom }}</p>
-            <p> Telephone : {{ app.user.telephone }}</p>
-            <p> Email : {{ app.user.email }}</p>
-            <p> Campus : {{ app.user.campus.nom }} </p>
-            <p>
-                <a href="#">Editer mon profil</a> | <a href="#">Changer mon mot de passe</a>
-            </p>
+
+    <div class="row">
+        <p class="lead"> {{ app.user.prenom }} {{ app.user.nom }} #{{ app.user.campus.nom }}</p>
+        <p> #{{ app.user.campus.nom }} </p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <p> {{ app.user.telephone }}</p>
+        </div>
+        <div class="col-md-6">
+            <p> {{ app.user.email }}</p>
+        </div>
+    </div>
+        <p>
+            <a href="#">Editer mon profil</a> | <a href="#">Changer mon mot de passe</a>
+        </p>
         </div>
     </div>
 {% endblock %}

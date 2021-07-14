@@ -5,9 +5,9 @@
 {% block body %}
 
 <div class="row">
-    <div class="col-md-9 mx-auto">
+    <div class="col-md-9 my-auto mx-auto">
 
-    <h1 class="my-5 text-center">Inscription</h1>
+    <h1 class="text-center">Inscription</h1>
 
         {{ form_start(registrationForm) }}
             <div class="row">
@@ -33,6 +33,7 @@
                     <div class="col-md-6">
                         {{ form_label(passwordField) }}
                         {{ form_widget(passwordField) }}
+                        {{ form_errors(passwordField) }}
                     </div>
                 {%  endfor %}
 
