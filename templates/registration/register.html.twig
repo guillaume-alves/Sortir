@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col-md-9 mx-auto">
+
+    <h1 class="my-5 text-center">Inscription</h1>
+
+        {{ form_start(registrationForm) }}
+            <div class="row">
+                <div class="col-md-6">
+                    {{ form_row(registrationForm.nom) }}
+                </div>
+                <div class="col-md-6">
+                    {{ form_row(registrationForm.prenom) }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    {{ form_row(registrationForm.telephone) }}
+                </div>
+                <div class="col-md-6">
+                    {{ form_row(registrationForm.campus) }}
+                </div>
+            </div>
+
+             <div class="row">
+                 {% for passwordField in registrationForm.plainPassword %}
+                    <div class="col-md-6">
+                        {{ form_label(passwordField) }}
+                        {{ form_widget(passwordField) }}
+                    </div>
+                {%  endfor %}
+
+        {{  form_widget(registrationForm) }}
+
+    <div class="d-grid gap-2">
+        <button class="btn btn-primary" formnovalidate>S'inscrire</button>
+    </div>
+
+    {{ form_end(registrationForm) }}
+    </div>
+</div>
+{% endblock %}

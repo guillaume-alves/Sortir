@@ -44,6 +44,11 @@ class Campus
         return $this->nom;
     }
 
+    // Pour le choice selector
+    public function __toString() {
+        return $this->getNom();
+    }
+
     public function setNom(string $nom): self
     {
         $this->nom = $nom;
