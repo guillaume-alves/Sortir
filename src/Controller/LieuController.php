@@ -41,5 +41,18 @@ class LieuController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/lieu/{id<[0-9]+>}/delete", name="app_lieu_delete", methods={"GET"})
+     */
+    public function delete(EntityManagerInterface $em, Lieu $lieu): Response
+    {
+        $em->remove($lieu);
+        $em->flush();
+
+        $this->addFlash('info', 'Lieu supprimé avec succès !');
+
+        return $this->redirectToRoute('app_lieu');
+    }
+
 
 }

@@ -6,6 +6,7 @@ use App\Entity\Ville;
 use App\Form\VilleType;
 use App\Repository\VilleRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,6 +17,7 @@ class VilleController extends AbstractController
 
     /**
      * @Route("/ville", name="app_ville")
+     * @Security("is_granted('ROLE_ADMIN')")
      */
     public function index(Request $request, EntityManagerInterface $em, VilleRepository $villeRepository): Response
     {
@@ -38,5 +40,19 @@ class VilleController extends AbstractController
             'form' => $form->createView(),
             'villes' => $villes
         ]);
+    }
+
+    /**
+     * @Route("/ville/{id<[0-9]+>}/delete", name="app_ville_delete", methods={"GET"})
+     * @Security("is_granted('ROLE_ADMIN')")
+     */
+    public function delete(EntityManagerInterface $em, Ville $ville): Response
+    {
+        $em->remove($ville);
+        $em->flush();
+
+        $this->addFlash('info', 'Ville supprimée avec succès !');
+
+        return $this->redirectToRoute('app_ville');
     }
 }

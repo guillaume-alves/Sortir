@@ -6,6 +6,7 @@ use App\Entity\Campus;
 use App\Form\CampusType;
 use App\Repository\CampusRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,6 +16,7 @@ class CampusController extends AbstractController
 {
     /**
      * @Route("/campus", name="app_campus")
+     * @Security("is_granted('ROLE_ADMIN')")
      */
     public function index(Request $request, EntityManagerInterface $em, CampusRepository $campusRepository): Response
     {
@@ -37,5 +39,19 @@ class CampusController extends AbstractController
             'form' => $form->createView(),
             'allCampus' => $allCampus
         ]);
+    }
+
+    /**
+     * @Route("/campus/{id<[0-9]+>}/delete", name="app_campus_delete", methods={"GET"})
+     * @Security("is_granted('ROLE_ADMIN')")
+     */
+    public function delete(EntityManagerInterface $em, Campus $campus): Response
+    {
+        $em->remove($campus);
+        $em->flush();
+
+        $this->addFlash('info', 'Campus supprimé avec succès !');
+
+        return $this->redirectToRoute('app_campus');
     }
 }
