@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau mot de passe{% endblock %}
+
+{% block body %}
+    <h1 class="my-3">Réinitialisation du mot de passe</h1>
+    <p class="my-3 text-muted">
+        Saississez un nouveau mot de passe pour votre compte. Nous vous recommandons d'éviter les mots de passe utilisés sur d'autres sites ou que quelqu'un d'autre pourrait aisement deviner.
+    </p>
+        <div class="col-md-6">
+            {{ form_start(resetForm) }}
+            {{ form_row(resetForm.plainPassword) }}
+            <button class="btn btn-primary" formnovalidate>Envoyer</button>
+            {{ form_end(resetForm) }}
+        </div>
+
+{% endblock %}
