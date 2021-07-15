@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Villes{% endblock %}
-
 {% block body %}
 
+    {# table listing all cities #}
+    <div class="col-md-6 container">
     <table class="table">
         <thead>
         <tr>
@@ -21,8 +21,27 @@
         </tbody>
     </table>
 
-    <p>
-        <a href={{ path('app_ville_create') }}#">Ajouter une ville</a>
-    </p>
+    {# form to add new city #}
+    <button class="btn btn-warning" type="button"
+            onclick="document.getElementById('villeForm').style.display = 'block'">
+        Ajouter une ville</button>
+
+    <div id="villeForm" class="col-md-9 my-3 mx-auto" style="display: none">
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col-md-6">
+                {{ form_row(form.nom) }}
+            </div>
+            <div class="col-md-6">
+                {{ form_row(form.codePostal) }}
+            </div>
+        </div>
+        {{ form_rest(form) }}
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary" formnovalidate>Envoyer</button>
+        </div>
+    </div>
+
+
 
 {% endblock %}

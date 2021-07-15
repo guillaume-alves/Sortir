@@ -14,21 +14,23 @@ use Symfony\Component\Routing\Annotation\Route;
 class VilleController extends AbstractController
 {
     /**
-     * @Route("/ville", name="app_ville")
+     * @Route("/villez", name="app_villee")
      */
-    public function index(VilleRepository $villeRepository): Response
+    public function indexx(VilleRepository $villeRepository): Response
     {
         $villes = $villeRepository->findAll();
-        return $this->render('lieu/index.html.twig', [
+        return $this->render('ville/index.html.twig', [
             'villes' => $villes,
         ]);
     }
 
     /**
-     * @Route("/ville/create", name="app_ville_create")
+     * @Route("/ville", name="app_ville")
      */
-    public function create(Request $request, EntityManagerInterface $em, VilleRepository $villeRepository): Response
+    public function index(Request $request, EntityManagerInterface $em, VilleRepository $villeRepository): Response
     {
+        $villes = $villeRepository->findAll();
+
         $ville = new Ville();
         $form = $this->createForm(VilleType::class, $ville);
         $form->handleRequest($request);
@@ -42,8 +44,9 @@ class VilleController extends AbstractController
             return $this->redirectToRoute('app_ville');
         }
 
-        return $this->render('ville/create.html.twig', [
-            'form' => $form->createView()
+        return $this->render('ville/index.html.twig', [
+            'form' => $form->createView(),
+            'villes' => $villes
         ]);
     }
 }

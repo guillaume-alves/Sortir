@@ -15,9 +15,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class LieuController extends AbstractController
 {
     /**
-     * @Route("/lieu", name="app_lieu")
+     * @Route("/lieuu", name="app_lieuu")
      */
-    public function index(LieuRepository $lieuRepository): Response
+    public function indexx(LieuRepository $lieuRepository): Response
     {
         $lieux = $lieuRepository->findAll();
         return $this->render('lieu/index.html.twig', [
@@ -26,10 +26,12 @@ class LieuController extends AbstractController
     }
 
     /**
-     * @Route("/lieu/create", name="app_lieu_create")
+     * @Route("/lieu", name="app_lieu")
      */
-    public function create(Request $request, EntityManagerInterface $em, LieuRepository $lieuRepository): Response
+    public function index(Request $request, EntityManagerInterface $em, LieuRepository $lieuRepository): Response
     {
+        $lieux = $lieuRepository->findAll();
+
         $lieu = new Lieu();
         $form = $this->createForm(LieuType::class, $lieu);
         $form->handleRequest($request);
@@ -43,7 +45,8 @@ class LieuController extends AbstractController
             return $this->redirectToRoute('app_lieu');
         }
 
-        return $this->render('lieu/create.html.twig', [
+        return $this->render('lieu/index.html.twig', [
+            'lieux' => $lieux,
             'form' => $form->createView()
         ]);
     }

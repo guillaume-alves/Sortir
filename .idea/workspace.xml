@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d14fcfba-9d9d-4755-8fc5-40206350eee9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/avatar-15-60f029f78863f234177570.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/LieuController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/VilleController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/LieuType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/VilleType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/lieu/create.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/lieu/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ville/create.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ville/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SortiesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SortiesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Ville.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Ville.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/LieuController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LieuController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/VilleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/VilleController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/layouts/nav.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layouts/nav.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/lieu/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/lieu/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ville/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ville/create.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ville/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ville/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,6 +185,11 @@
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\galves2021\PhpstormProjects\Sortir\public\images" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -210,6 +210,7 @@
       <workItem from="1626262919487" duration="21809000" />
       <workItem from="1626328811237" duration="13936000" />
       <workItem from="1626349710490" duration="6876000" />
+      <workItem from="1626362370718" duration="3926000" />
     </task>
     <servers />
   </component>
