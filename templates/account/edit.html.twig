@@ -5,6 +5,7 @@
 {% block body %}
     <div class="row">
         <div class="col-md-6 mx-auto">
+            <h1 class="my-3">Mon profil</h1>
             {{ form_start(form) }}
             <div class="row">
                 <div class="col-md-6">
@@ -24,6 +25,9 @@
                 <button type="submit" class="btn btn-primary">Mettre à jour le profil</button>
             </div>
             {{ form_end(form) }}
+            <p>
+                <a href={{ path('app_account') }}#">Retour</a>
+            </p>
         </div>
     </div>
 

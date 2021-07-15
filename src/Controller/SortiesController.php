@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class SortiesController extends AbstractController
 {
     /**
-     * @Route("/sorties", name="app_home")
+     * @Route("/sorties", name="app_sorties")
      */
     public function index(SortieRepository $sortieRepository): Response
     {

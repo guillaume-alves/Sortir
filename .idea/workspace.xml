@@ -2,24 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d14fcfba-9d9d-4755-8fc5-40206350eee9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/packages/reset_password.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210715061250.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/ResetPasswordController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/ResetPasswordRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/ChangePasswordFormType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/ResetPasswordRequestFormType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/ResetPasswordRequestRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/reset_password/check_email.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/reset_password/email.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/reset_password/request.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/reset_password/reset.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/avatar-60efe20a5fa6b121996974.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/account/change_password.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/avatar-60ef1bcd5813b851970238.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccountController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SortiesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SortiesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ChangePasswordFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ChangePasswordFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ParticipantAvatarFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ParticipantAvatarFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account/avatar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/avatar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layouts/flash_messages.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layouts/flash_messages.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layouts/nav.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layouts/nav.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reset_password/check_email.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reset_password/check_email.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reset_password/email.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reset_password/email.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sorties/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sorties/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +212,7 @@
       <workItem from="1626195155906" duration="6732000" />
       <workItem from="1626236937072" duration="10907000" />
       <workItem from="1626262919487" duration="21809000" />
-      <workItem from="1626328811237" duration="4298000" />
+      <workItem from="1626328811237" duration="9797000" />
     </task>
     <servers />
   </component>

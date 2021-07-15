@@ -47,7 +47,7 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
         // flash message if successfully login
-        // $request->getSession()->getFlashBag()->add('success', 'Bienvenue ' . $token->getUser()->getPrenom());
+        $request->getSession()->getFlashBag()->add('success', 'Bienvenue ' . $token->getUser()->getPrenom());
 
         if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
             return new RedirectResponse($targetPath);
