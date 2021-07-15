@@ -3,19 +3,17 @@
 {% block body %}
 
     {# table listing all cities #}
-    <div class="col-md-6 container">
+    <div class="col-md-4 container">
         <table class="table">
             <thead>
             <tr>
-                <th scope="col">Ville</th>
-                <th scope="col">Code Postal</th>
+                <th scope="col">Campus</th>
             </tr>
             </thead>
             <tbody>
-            {% for ville in villes %}
+            {% for campus in allCampus %}
                 <tr>
-                    <th>{{ ville.nom }}</th>
-                    <td>{{ ville.codePostal }}</td>
+                    <th>{{ campus.nom }}</th>
                 </tr>
             {% endfor %}
             </tbody>
@@ -23,17 +21,14 @@
 
         {# form to add new city #}
         <button class="btn btn-warning" type="button"
-                onclick="document.getElementById('villeForm').style.display = 'block'">
-            Ajouter une ville</button>
+                onclick="document.getElementById('campusForm').style.display = 'block'">
+            Ajouter un campus</button>
 
-        <div id="villeForm" class="my-3 mx-auto" style="display: none">
+        <div id="campusForm" class="my-3 mx-auto" style="display: none">
             {{ form_start(form) }}
             <div class="row">
-                <div class="col-md-6">
+                <div class="col">
                     {{ form_row(form.nom) }}
-                </div>
-                <div class="col-md-6">
-                    {{ form_row(form.codePostal) }}
                 </div>
             </div>
             {{ form_rest(form) }}
@@ -42,7 +37,5 @@
             </div>
         </div>
     </div>
-
-
 
 {% endblock %}

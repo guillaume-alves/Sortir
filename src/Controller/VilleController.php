@@ -13,16 +13,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class VilleController extends AbstractController
 {
-    /**
-     * @Route("/villez", name="app_villee")
-     */
-    public function indexx(VilleRepository $villeRepository): Response
-    {
-        $villes = $villeRepository->findAll();
-        return $this->render('ville/index.html.twig', [
-            'villes' => $villes,
-        ]);
-    }
 
     /**
      * @Route("/ville", name="app_ville")

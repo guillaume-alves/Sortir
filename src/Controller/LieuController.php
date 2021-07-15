@@ -14,16 +14,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class LieuController extends AbstractController
 {
-    /**
-     * @Route("/lieuu", name="app_lieuu")
-     */
-    public function indexx(LieuRepository $lieuRepository): Response
-    {
-        $lieux = $lieuRepository->findAll();
-        return $this->render('lieu/index.html.twig', [
-            'lieux' => $lieux,
-        ]);
-    }
 
     /**
      * @Route("/lieu", name="app_lieu")
