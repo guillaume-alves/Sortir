@@ -68,6 +68,11 @@ class Ville
         return $this;
     }
 
+    // Pour le choice selector
+    public function __toString() {
+        return $this->getNom();
+    }
+
     /**
      * @return Collection|Lieu[]
      */

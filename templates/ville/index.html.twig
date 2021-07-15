@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Villes{% endblock %}
+
+{% block body %}
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Ville</th>
+            <th scope="col">Code Postal</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for ville in villes %}
+            <tr>
+                <th>{{ ville.nom }}</th>
+                <td>{{ ville.codePostal }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <p>
+        <a href={{ path('app_ville_create') }}#">Ajouter une ville</a>
+    </p>
+
+{% endblock %}

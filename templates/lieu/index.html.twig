@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lieux{% endblock %}
+
+{% block body %}
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Rue</th>
+            <th scope="col">Code Postal</th>
+            <th scope="col">Ville</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for lieu in lieux %}
+        <tr>
+            <th>{{ lieu.nom }}</th>
+            <td>{{ lieu.rue }}</td>
+            <td>{{ lieu.ville.codePostal }}</td>
+            <td>{{ lieu.ville.nom }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <p>
+        <a href={{ path('app_lieu_create') }}#">Ajouter un lieu</a>
+    </p>
+
+{% endblock %}

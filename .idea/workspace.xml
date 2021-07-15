@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d14fcfba-9d9d-4755-8fc5-40206350eee9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/avatar-yellow-60effc1d57344601765160.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/avatar-15-60f029f78863f234177570.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/LieuController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/VilleController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/LieuType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/VilleType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/lieu/create.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/lieu/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ville/create.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ville/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layouts/flash_messages.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layouts/flash_messages.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SortiesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SortiesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Ville.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Ville.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/layouts/nav.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layouts/nav.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -174,6 +180,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -201,7 +208,8 @@
       <workItem from="1626195155906" duration="6732000" />
       <workItem from="1626236937072" duration="10907000" />
       <workItem from="1626262919487" duration="21809000" />
-      <workItem from="1626328811237" duration="13092000" />
+      <workItem from="1626328811237" duration="13936000" />
+      <workItem from="1626349710490" duration="6876000" />
     </task>
     <servers />
   </component>
