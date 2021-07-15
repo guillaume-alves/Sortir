@@ -17,19 +17,23 @@
                         <a class="nav-link active" href="{{ path('app_home') }}">Accueil</a>
                     </li>
                     <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_lieu') }}">Lieux</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ path('app_account') }}">Mon profil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('app_logout') }}">Se déconnecter</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('app_campus') }}">Campus</a>
+                        <a class="nav-link" href="{{ path('app_campus') }}">#Campus</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path ('app_ville')}}">Villes</a>
+                        <a class="nav-link" href="{{ path ('app_ville')}}">#Villes</a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('app_lieu') }}">Lieux</a>
+                        <a class="nav-link" href="{{ path('app_participant') }}">#Participants</a>
                     </li>
                 {% else %}
                     <li class="nav-item">

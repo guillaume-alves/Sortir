@@ -12,10 +12,10 @@
         {{ form_start(registrationForm) }}
             <div class="row">
                 <div class="col-md-6">
-                    {{ form_row(registrationForm.nom) }}
+                    {{ form_row(registrationForm.prenom) }}
                 </div>
                 <div class="col-md-6">
-                    {{ form_row(registrationForm.prenom) }}
+                    {{ form_row(registrationForm.nom) }}
                 </div>
             </div>
 
@@ -36,13 +36,10 @@
                         {{ form_errors(passwordField) }}
                     </div>
                 {%  endfor %}
-
         {{  form_widget(registrationForm) }}
-
     <div class="d-grid gap-2">
         <button class="btn btn-primary" formnovalidate>S'inscrire</button>
     </div>
-
     {{ form_end(registrationForm) }}
     </div>
 </div>

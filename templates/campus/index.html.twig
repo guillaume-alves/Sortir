@@ -26,12 +26,20 @@
             </tbody>
         </table>
 
-        {# form to add new city #}
-        <button class="btn btn-warning" type="button"
-                onclick="document.getElementById('campusForm').style.display = 'block'">
+        {# form to add new campus #}
+        <button id="btn-add" class="btn btn-warning" type="button"
+                onclick="document.getElementById('btn-add').style.display = 'none'
+                         document.getElementById('btn-cancel').style.display = 'block'
+                         document.getElementById('form').style.display = 'block'">
             Ajouter un campus</button>
 
-        <div id="campusForm" class="my-3 mx-auto" style="display: none">
+        <button id="btn-cancel" class="btn btn-warning" type="button" style="display: none"
+                onclick="document.getElementById('btn-cancel').style.display = 'none'
+                         document.getElementById('form').style.display = 'none'
+                         document.getElementById('btn-add').style.display = 'block'">
+            Annuler</button>
+
+        <div id="form" class="my-3 mx-auto" style="display: none">
             {{ form_start(form) }}
             <div class="row">
                 <div class="col">

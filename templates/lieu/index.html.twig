@@ -34,12 +34,20 @@
         </tbody>
     </table>
 
-    {# form to add new city #}
-    <button class="btn btn-warning" type="button"
-            onclick="document.getElementById('lieuForm').style.display = 'block'">
+    {# form to add new site #}
+    <button id="btn-add" class="btn btn-warning" type="button"
+            onclick="document.getElementById('btn-add').style.display = 'none'
+                         document.getElementById('btn-cancel').style.display = 'block'
+                         document.getElementById('form').style.display = 'block'">
         Ajouter un lieu</button>
 
-    <div id="lieuForm" class="col-md-9 my-3 mx-auto" style="display: none">
+    <button id="btn-cancel" class="btn btn-warning" type="button" style="display: none"
+            onclick="document.getElementById('btn-cancel').style.display = 'none'
+                         document.getElementById('form').style.display = 'none'
+                         document.getElementById('btn-add').style.display = 'block'">
+        Annuler</button>
+
+    <div id="form" class="col-md-9 my-3 mx-auto" style="display: none">
         {{ form_start(form) }}
         <div class="row">
             {{ form_row(form.ville) }}
