@@ -7,7 +7,7 @@
     <div class="row mt-5">
 
         <div class="col-md-6 text-center">
-            <img class="rounded-top d-block w-auto mx-auto mb-2" src="{{ (app.user.image ? vich_uploader_asset(app.user.image) : ('/../images/avatar_icon.png')) }}" alt="avatar">
+            <img class="rounded-top d-block w-auto mx-auto mb-2" src="{{ (app.user.image.imageName ? vich_uploader_asset(app.user.image) : ('/../images/avatar_icon.png')) }}" alt="avatar">
 
         </div>
 

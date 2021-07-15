@@ -22,6 +22,8 @@ class RegistrationController extends AbstractController
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, CampusRepository $campusRepository, ParticipantRepository $participantAvatarRepository): Response
     {
         $user = new Participant();
+        $avatar = new ParticipantAvatar();
+        $user->setImage($avatar);
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 
@@ -45,7 +47,7 @@ class RegistrationController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
             // do anything else you need here, like send an email
-
+            $this->addFlash('success', 'Inscription réalisée avec succès, vous pouvez maintenant vous connecter !');
             return $this->redirectToRoute('app_login');
         }
 
