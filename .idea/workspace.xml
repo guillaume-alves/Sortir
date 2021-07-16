@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d14fcfba-9d9d-4755-8fc5-40206350eee9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/sorties/create.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/sorties/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/SortiesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SortiesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Campus.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Campus.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Lieu.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Lieu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Ville.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Ville.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Etat.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Etat.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/SortieType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SortieType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sorties/creer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sorties/creer.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sorties/creer.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sorties/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sorties/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +25,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -215,7 +224,8 @@
       <workItem from="1626349710490" duration="6876000" />
       <workItem from="1626362370718" duration="8501000" />
       <workItem from="1626371717015" duration="6336000" />
-      <workItem from="1626413589771" duration="9601000" />
+      <workItem from="1626413589771" duration="16319000" />
+      <workItem from="1626435741888" duration="12130000" />
     </task>
     <servers />
   </component>

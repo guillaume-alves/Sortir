@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% block title %}Nouvelle sortie{% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col-md-9 my-auto mx-auto">
+        <h1 class="text-center">Nouvelle sortie</h1>
+            <div class="col-md-6">
+                {{ form_start(sortieForm) }}
+                {{ form_row(sortieForm) }}
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" formnovalidate>Soumettre</button>
+                </div>
+                {{ form_end(sortieForm) }}
+            </div>
+    </div>
+</div>
+{% endblock %}
+

@@ -2,12 +2,11 @@
 
 namespace App\Form;
 
+use App\Entity\Etat;
 use App\Entity\Lieu;
 use App\Entity\Sortie;
-use App\Entity\Ville;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -26,6 +25,11 @@ class SortieType extends AbstractType
                 'class' => Lieu::class,
                 'mapped' => true,
                 'placeholder' => 'Selectionnez le lieu',
+            ])
+            ->add('etat',EntityType::class,[
+                'class' => Etat::class,
+                'mapped' => true,
+                'placeholder' => "Selectionnez l'état",
             ])
         ;
     }

@@ -3,88 +3,102 @@
 {% block title %}Hello SortiesController!{% endblock %}
 
 {% block body %}
-    <h1 class="h3 mb-3 font-weight-normal">Filtrer les sorties</h1>
+    <h1 class="container text-left h3 mb-3 font-weight-normal">Filtrer les sorties</h1>
 
-    <form method="post">
-        <div class="my-3">
-            <label for="choixCampus">Campus</label>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 bg-warning>">
+                <div class="my-3>">
+                    <label for="choixCampus">Campus</label>
+                    <select>
+                        <option> Tous</option>
+                        {% for c in campus %}
+                            <option> {{ c.nom }}</option>
+                        {% endfor  %}
+                    </select>
+                </div>
 
-            <select name="campus" >
-                <option> Tous</option>
-                {% for c in campus %}
-                    <option> {{ c.nom }}</option>
-                {% endfor  %}
-            </select>
+                <div class="my-3">
+                    <label for="nomsortie">Le nom de la sortie contient</label>
+                    <input type="search" name="nomsortie" id="nomsortie" >
+                </div>
 
+                <div class="my-3">
+                    <label for="datedebut">Entre</label>
+                    <input type="date" name="datedebut" id="datedebut " >
+                    <label for="datefin">et</label>
+                    <input type="date" name="datefin" id="datefin" >
+                </div>
+            </div>
 
+            <div class="col-md">
+                <input type="checkbox" name="jorganise" id="datedebut" > Sorties dont je suis l'organisateur/trice<br>
+                <input type="checkbox" name="jorganise" id="datedebut" > Sorties auxquelles je suis incrit/e<br>
+                <input type="checkbox" name="jorganise" id="datedebut" > Sorties auxquelles je ne suis pas incrit/e<br>
+                <input type="checkbox" name="jorganise" id="datedebut" > Sorties passée
+            </div>
+
+            <div class="col-md">
+                <button class="btn btn-primary" type="submit" >Rechercher</button>
+            </div>
         </div>
-
-        <div class="my-3">
-            <label for="nomsortie">Le nom de la sortie contient</label>
-            <input type="search" name="nomsortie" id="nomsortie" >
-        </div>
-
-        <div class="my-3">
-            <label for="datedebut">Entre</label>
-            <input type="date" name="datedebut" id="datedebut " >
-            <label for="datefin">et</label>
-            <input type="date" name="datefin" id="datefin" >
-        </div>
-
-        <div class="my-3">
-
-            <input type="checkbox" name="jorganise" id="datedebut" > Sorties dont je suis l'organisateur/trice<br>
-            <input type="checkbox" name="jorganise" id="datedebut" > Soties auxquelles je suis incrit/e<br>
-            <input type="checkbox" name="jorganise" id="datedebut" > Soties auxquelles je ne suis pas incrit/e<br>
-            <input type="checkbox" name="jorganise" id="datedebut" > Soties passée
-        </div>
-
-        <div class="d-grid gap-2">
-            <button class="btn btn-primary" type="submit" >Rechercher</button>
-        </div>
-
-    </form>
-
+    </div>
 
         <table class="table">
             <thead>
                 <tr>
                     <th>Nom de la sortie</th>
-                    <th>Date de le sortie</th>
+                    <th>Date de la sortie</th>
                     <th>Cloture</th>
-                    <th>Inscrits/places </th>
-                    <th>Etat </th>
-                    <th>Inscrit </th>
-                    <th>Organisateur </th>
-                    <th>Actions </th>
+                    <th>Inscrits/Places</th>
+                    <th>Etat</th>
+                    <th>Inscrit</th>
+                    <th>Organisateur</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
             {% for sortie in sorties %}
             <tr>
                 <td>{{ sortie.nom }}</td>
-                <td>{{ sortie.dateHeureDebut|date('d/m/Y')}}</td>
-                <td>{{ sortie.dateLimiteInscription|date('d/m/Y')}}</td>
-                <td>{{ sortie.nbInscriptionsMax }} </td>
-                <td> {{ sortie.etat.libelle}} </td>
-                <td>Inscrit </td>
-                <td>{{ sortie.organisateur.nom}} </td>
-                <td>Actions </td>
+                <td>{{ sortie.dateHeureDebut|date('Y-m-d H:i')}}</td>
+                <td>{{ sortie.dateLimiteInscription|date('Y-m-d')}}</td>
+                <td>{{ sortie.participant|length }}/{{ sortie.nbInscriptionsMax }} </td>
+                <td>{{ sortie.etat.libelle}}</td>
+                <td>{% if app.user in sortie.getParticipant %} {{ 'Oui' }} {% endif %}</td>
+                <td>
+                    <a href="{{ path('app_participant_show', {id: sortie.organisateur.id}) }}">
+                        {{ sortie.organisateur.prenom }} {{ sortie.organisateur.nom }}</a>
+                </td>
+                <td>
+                    <a href="{{ path('app_sortie_show', {id: sortie.id}) }}">
+                        Afficher
+                    </a><br>
+
+                    {% if app.user == sortie.organisateur %}
+                        <a href="{{ path('app_sortie_edit', {id: sortie.id}) }}">
+                            Modifier
+                        </a><br>
+                    {% endif %}
+
+                    {% if app.user not in sortie.getParticipant %}
+                        <a id="register-link" href="{{ path('app_sortie_subscribe', {id: sortie.id}) }}">
+                            S'inscrire
+                        </a><br>
+                    {% endif %}
+
+                    {% if app.user in sortie.getParticipant %}
+                        <a href="{{ path('app_sortie_unsubscribe', {id: sortie.id}) }}">
+                            Se désinscrire
+                        </a><br>
+                    {% endif %}
+                </td>
             </tr>
             </tbody>
             {% endfor %}
 
-
-
         </table>
 
-    <a class="btn btn-primary" href="#" role="button">Créer une sortie</a>
-
-
-
-
-
-
-
+    <a class="btn btn-primary" href="{{ path('app_sortie_create') }}" role="button">Créer une sortie</a>
 
 {% endblock %}
