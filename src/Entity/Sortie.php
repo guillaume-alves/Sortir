@@ -50,28 +50,28 @@ class Sortie
     private $infosSortie;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Participant::class, inversedBy="sortiesOrganisees")
+     * @ORM\ManyToOne(targetEntity=Participant::class, inversedBy="sortiesOrganisees", cascade={"persist", "remove"})
      */
     private $organisateur;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Participant::class, inversedBy="sortiesParticipees")
+     * @ORM\ManyToMany(targetEntity=Participant::class, inversedBy="sortiesParticipees", cascade={"persist", "remove"})
      */
     private $participant;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Etat::class, inversedBy="sortiesParEtat")
+     * @ORM\ManyToOne(targetEntity=Etat::class, inversedBy="sortiesParEtat", cascade={"persist", "remove"})
      */
     private $etat;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Lieu::class, inversedBy="sortiesParLieu")
+     * @ORM\ManyToOne(targetEntity=Lieu::class, inversedBy="sortiesParLieu", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $lieu;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Campus::class, inversedBy="sortiesParCampus")
+     * @ORM\ManyToOne(targetEntity=Campus::class, inversedBy="sortiesParCampus", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $campus;
