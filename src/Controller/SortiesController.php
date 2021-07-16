@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Sortie;
+use App\Form\SortieType;
 use App\Repository\CampusRepository;
 use App\Repository\EtatRepository;
 use App\Repository\ParticipantRepository;
@@ -29,31 +30,24 @@ class SortiesController extends AbstractController
     /**
      * @Route("/creer", name="app_creer")
      */
-    public function creer(
-        Request $request,
-        EntityManagerInterface $entityManager,
-        ParticipantRepository $participantRepository,
-        EtatRepository $etatRepository,
-        CampusRepository $campusRepository
-    ) :  Response
+    public function creer(Request $request, EntityManagerInterface $em, ParticipantRepository $participantRepository, EtatRepository $etatRepository, CampusRepository $campusRepository) :  Response
     {
         $sortie = new Sortie();
         $sortieForm = $this->createForm(SortieType::class, $sortie);
-
-        $sortie->setOrganisateur($participantRepository->findOneBy(['id' => 1]));
-        $sortie->setEtat($etatRepository->findOneBy(['id' => 1]));
+        $user = $this->getUser();
+        $userId = $user->getId();
+        $userCampus = $user->getCampus();
 
         $sortieForm->handleRequest($request);
 
         if($sortieForm->isSubmitted() && $sortieForm->isValid())
         {
-            $dataCampusNom = $sortieForm->getData()->getCampus()->getNom();
-            $campus = $campusRepository->findOneBy(['nom' => $dataCampusNom]);
-            $sortie->setCampus($campus);
+            $sortie->setOrganisateur($participantRepository->findOneBy(['id' => $userId]));
+            $sortie->setEtat($etatRepository->findOneBy(['id' => 1]));
+            $sortie->setCampus($userCampus);
 
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($sortie);
-            $entityManager->flush();
+            $em->persist($sortie);
+            $em->flush();
 
             $this->addFlash('sucess', 'Une nouvelle sortie a été crée');
             return $this->redirectToRoute('app_home');
