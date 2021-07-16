@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CampusController extends AbstractController
 {
     /**
-     * @Route("/campus", name="app_campus")
+     * @Route("/admin/campus", name="app_admin_campus")
      * @Security("is_granted('ROLE_ADMIN')")
      */
     public function index(Request $request, EntityManagerInterface $em, CampusRepository $campusRepository): Response
@@ -32,7 +32,7 @@ class CampusController extends AbstractController
             $em->flush();
             // do anything else you need here, like send an email
             $this->addFlash('success', 'Nouveau campus ajouté avec succès !');
-            return $this->redirectToRoute('app_campus');
+            return $this->redirectToRoute('app_admin_campus');
         }
 
         return $this->render('campus/index.html.twig', [
@@ -42,7 +42,7 @@ class CampusController extends AbstractController
     }
 
     /**
-     * @Route("/campus/{id<[0-9]+>}/delete", name="app_campus_delete", methods={"GET"})
+     * @Route("/admin/campus/{id<[0-9]+>}/delete", name="app_admin_campus_delete", methods={"GET"})
      * @Security("is_granted('ROLE_ADMIN')")
      */
     public function delete(EntityManagerInterface $em, Campus $campus): Response
@@ -52,6 +52,6 @@ class CampusController extends AbstractController
 
         $this->addFlash('info', 'Campus supprimé avec succès !');
 
-        return $this->redirectToRoute('app_campus');
+        return $this->redirectToRoute('app_admin_campus');
     }
 }

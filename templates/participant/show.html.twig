@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon profil{% endblock %}
+
+{% block body %}
+
+    <div class="row mt-5">
+
+        <div class="col-md-6 text-center">
+            <img class="rounded-top d-block w-auto mx-auto mb-2" src="{% if participant.image.imageName == "avatarNameByDefault" %} {{ ('/../images/avatar_icon.png') }} {% else %} {{ vich_uploader_asset(participant.image) }} {% endif %}" alt="avatar">
+
+        </div>
+
+        <div class="col-md-6">
+            <p class="h3"> {{ participant.prenom }} {{ participant.nom }} </p>
+            <p class="lead"> {{ participant.email }}</p>
+            <p> #{{ participant.campus.nom }} </p>
+            <p> {{ participant.telephone }}</p>
+        </div>
+    </div>
+
+{% endblock %}

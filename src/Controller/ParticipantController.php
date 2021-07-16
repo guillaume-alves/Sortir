@@ -13,12 +13,21 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class ParticipantController extends AbstractController
 {
     /**
-     * @Route("/participant", name="app_participant")
+     * @Route("/participant/{id<[0-9]+>}/show", name="app_participant_show")
+     */
+    public function show(Participant $participant): Response
+    {
+        return $this->render('participant/show.html.twig', [
+            'participant' => $participant
+        ]);
+    }
+
+    /**
+     * @Route("/admin/participant", name="app_admin_participant")
      * @Security("is_granted('ROLE_ADMIN')")
      */
     public function index(Request $request, UserPasswordHasherInterface $passwordHasher, EntityManagerInterface $em, ParticipantRepository $participantRepository): Response
@@ -49,7 +58,7 @@ class ParticipantController extends AbstractController
 
             // do anything else you need here, like send an email
             $this->addFlash('success', 'Nouveau participant créé avec succès !');
-            return $this->redirectToRoute('app_participant');
+            return $this->redirectToRoute('app_admin_participant');
         }
 
         return $this->render('participant/index.html.twig', [
@@ -58,10 +67,27 @@ class ParticipantController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/admin/participant/{id<[0-9]+>}/desactivate", name="app_admin_participant_desactivate", methods={"GET"})
+     * @Security("is_granted('ROLE_ADMIN')")
+     */
+    public function disable(EntityManagerInterface $em, Participant $participant): Response
+    {
+        //Activate or disable user
+        if ($participant->getActif()) {
+            $participant->setActif(false);
+        }
+        else $participant->setActif(true);
+        $em->persist($participant);
+        $em->flush();
 
+        $this->addFlash('info', 'Status du participant mis à jour avec succès !');
+
+        return $this->redirectToRoute('app_admin_participant');
+    }
 
     /**
-     * @Route("/ville/{id<[0-9]+>}/delete", name="app_participant_delete", methods={"GET"})
+     * @Route("/admin/participant/{id<[0-9]+>}/delete", name="app_admin_participant_delete", methods={"GET"})
      * @Security("is_granted('ROLE_ADMIN')")
      */
     public function delete(EntityManagerInterface $em, Participant $participant): Response
@@ -71,6 +97,6 @@ class ParticipantController extends AbstractController
 
         $this->addFlash('info', 'Participant supprimé avec succès !');
 
-        return $this->redirectToRoute('app_participant');
+        return $this->redirectToRoute('app_admin_participant');
     }
 }

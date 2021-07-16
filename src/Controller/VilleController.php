@@ -16,7 +16,7 @@ class VilleController extends AbstractController
 {
 
     /**
-     * @Route("/ville", name="app_ville")
+     * @Route("/admin/ville", name="app_admin_ville")
      * @Security("is_granted('ROLE_ADMIN')")
      */
     public function index(Request $request, EntityManagerInterface $em, VilleRepository $villeRepository): Response
@@ -33,7 +33,7 @@ class VilleController extends AbstractController
             $em->flush();
             // do anything else you need here, like send an email
             $this->addFlash('success', 'Nouvelle ville ajoutée avec succès !');
-            return $this->redirectToRoute('app_ville');
+            return $this->redirectToRoute('app_admin_ville');
         }
 
         return $this->render('ville/index.html.twig', [
@@ -43,7 +43,7 @@ class VilleController extends AbstractController
     }
 
     /**
-     * @Route("/ville/{id<[0-9]+>}/delete", name="app_ville_delete", methods={"GET"})
+     * @Route("/admin/ville/{id<[0-9]+>}/delete", name="app_admin_ville_delete", methods={"GET"})
      * @Security("is_granted('ROLE_ADMIN')")
      */
     public function delete(EntityManagerInterface $em, Ville $ville): Response
@@ -53,6 +53,6 @@ class VilleController extends AbstractController
 
         $this->addFlash('info', 'Ville supprimée avec succès !');
 
-        return $this->redirectToRoute('app_ville');
+        return $this->redirectToRoute('app_admin_ville');
     }
 }

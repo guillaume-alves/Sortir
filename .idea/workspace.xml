@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d14fcfba-9d9d-4755-8fc5-40206350eee9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/avatar-3-60f0923f8d924388189404.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/ParticipantController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/participant/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/participant/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CampusController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CampusController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ParticipantController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ParticipantController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/VilleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/VilleController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/campus/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/campus/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/layouts/nav.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layouts/nav.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/lieu/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/lieu/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/participant/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/participant/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/ville/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ville/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -214,7 +212,8 @@
       <workItem from="1626328811237" duration="13936000" />
       <workItem from="1626349710490" duration="6876000" />
       <workItem from="1626362370718" duration="8501000" />
-      <workItem from="1626371717015" duration="6281000" />
+      <workItem from="1626371717015" duration="6336000" />
+      <workItem from="1626413589771" duration="2862000" />
     </task>
     <servers />
   </component>
