@@ -3,17 +3,88 @@
 {% block title %}Hello SortiesController!{% endblock %}
 
 {% block body %}
+    <h1 class="h3 mb-3 font-weight-normal">Filtrer les sorties</h1>
 
-    {% for sortie in sorties %}
+    <form method="post">
+        <div class="my-3">
+            <label for="choixCampus">Campus</label>
 
-        {{ sortie.nom }}
-        {{ sortie.duree }}
+            <select name="campus" >
+                <option> Tous</option>
+                {% for c in campus %}
+                    <option> {{ c.nom }}</option>
+                {% endfor  %}
+            </select>
 
-        <table>
-            <th>
-            </th>
+
+        </div>
+
+        <div class="my-3">
+            <label for="nomsortie">Le nom de la sortie contient</label>
+            <input type="search" name="nomsortie" id="nomsortie" >
+        </div>
+
+        <div class="my-3">
+            <label for="datedebut">Entre</label>
+            <input type="date" name="datedebut" id="datedebut " >
+            <label for="datefin">et</label>
+            <input type="date" name="datefin" id="datefin" >
+        </div>
+
+        <div class="my-3">
+
+            <input type="checkbox" name="jorganise" id="datedebut" > Sorties dont je suis l'organisateur/trice<br>
+            <input type="checkbox" name="jorganise" id="datedebut" > Soties auxquelles je suis incrit/e<br>
+            <input type="checkbox" name="jorganise" id="datedebut" > Soties auxquelles je ne suis pas incrit/e<br>
+            <input type="checkbox" name="jorganise" id="datedebut" > Soties passée
+        </div>
+
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="submit" >Rechercher</button>
+        </div>
+
+    </form>
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nom de la sortie</th>
+                    <th>Date de le sortie</th>
+                    <th>Cloture</th>
+                    <th>Inscrits/places </th>
+                    <th>Etat </th>
+                    <th>Inscrit </th>
+                    <th>Organisateur </th>
+                    <th>Actions </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for sortie in sorties %}
+            <tr>
+                <td>{{ sortie.nom }}</td>
+                <td>{{ sortie.dateHeureDebut|date('d/m/Y')}}</td>
+                <td>{{ sortie.dateLimiteInscription|date('d/m/Y')}}</td>
+                <td>{{ sortie.nbInscriptionsMax }} </td>
+                <td> {{ sortie.etat.libelle}} </td>
+                <td>Inscrit </td>
+                <td>{{ sortie.organisateur.nom}} </td>
+                <td>Actions </td>
+            </tr>
+            </tbody>
+            {% endfor %}
+
+
+
         </table>
 
-    {% endfor %}
+    <a class="btn btn-primary" href="#" role="button">Créer une sortie</a>
+
+
+
+
+
+
+
 
 {% endblock %}

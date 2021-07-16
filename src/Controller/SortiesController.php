@@ -9,6 +9,7 @@ use App\Repository\EtatRepository;
 use App\Repository\ParticipantRepository;
 use App\Repository\SortieRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Repository\CampusRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,11 +20,13 @@ class SortiesController extends AbstractController
     /**
      * @Route("/", name="app_home")
      */
-    public function index(SortieRepository $sortieRepository): Response
+    public function affichersorties(SortieRepository $sortieRepository, CampusRepository $campusRepository): Response
     {
         $sorties = $sortieRepository->findAll();
+        $campus = $campusRepository->findAll();
         return $this->render('sorties/index.html.twig', [
-            'sorties' => $sorties
+            'sorties' => $sorties,
+            'campus' => $campus
         ]);
     }
 
