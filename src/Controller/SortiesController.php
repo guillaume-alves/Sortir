@@ -2,14 +2,12 @@
 
 namespace App\Controller;
 
-use App\Entity\Participant;
 use App\Entity\Sortie;
 use App\Form\SortieType;
 use App\Repository\CampusRepository;
 use App\Repository\EtatRepository;
 use App\Repository\ParticipantRepository;
 use App\Repository\SortieRepository;
-use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -24,9 +22,19 @@ class SortiesController extends AbstractController
     public function index(SortieRepository $sortieRepository, CampusRepository $campusRepository): Response
     {
         $sorties = $sortieRepository->findAll();
+        $sortiesValid = array();
+        $dateNowLessOneMonth = date('d-m-Y', strtotime('-30 days'));
+
+        foreach ($sorties as $sortie) {
+            $dateRaw = $sortie->getDateHeureDebut();
+            $dateFormatted = date_format($dateRaw, 'd-m-Y');
+            if ($dateFormatted > $dateNowLessOneMonth){
+                array_push($sortiesValid, $sortie);
+            }
+        }
         $campus = $campusRepository->findAll();
         return $this->render('sorties/index.html.twig', [
-            'sorties' => $sorties,
+            'sortiesValid' => $sortiesValid,
             'campus' => $campus
         ]);
     }
