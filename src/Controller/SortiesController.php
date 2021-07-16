@@ -19,23 +19,46 @@ class SortiesController extends AbstractController
     /**
      * @Route("/", name="app_home")
      */
-    public function index(SortieRepository $sortieRepository, CampusRepository $campusRepository): Response
+    public function index(Request $request, SortieRepository $sortieRepository, CampusRepository $campusRepository): Response
     {
+        $campus = $campusRepository->findAll();
         $sorties = $sortieRepository->findAll();
-        $sortiesValid = array();
+
+        $sortiesArray = array();
         $dateNowLessOneMonth = date('d-m-Y', strtotime('-30 days'));
 
         foreach ($sorties as $sortie) {
             $dateRaw = $sortie->getDateHeureDebut();
             $dateFormatted = date_format($dateRaw, 'd-m-Y');
             if ($dateFormatted > $dateNowLessOneMonth){
-                array_push($sortiesValid, $sortie);
+                array_push($sortiesArray, $sortie);
             }
         }
-        $campus = $campusRepository->findAll();
+        $searchForm = $this->createForm('App\Form\SearchType');
+        $searchForm->handleRequest($request);
+
+        if($searchForm->isSubmitted() && $searchForm->isValid())
+        {
+            $sortiesArray2 = array();
+            if(!$searchForm->getData()['campus']) {
+
+                foreach ($sortiesArray as $sortie) {
+                    if($sortie->getCampus()->getId() != $searchForm->getData()['campus']->getId()){
+                        array_push($sortiesArray2, $sortie);
+                    }
+                }
+            }
+            return $this->render('sorties/index.html.twig', [
+                'sortiesArray' => $sortiesArray2,
+                'campus' => $campus,
+                'searchForm' => $searchForm->createView()
+            ]);
+        }
+
         return $this->render('sorties/index.html.twig', [
-            'sortiesValid' => $sortiesValid,
-            'campus' => $campus
+            'sortiesArray' => $sortiesArray,
+            'campus' => $campus,
+            'searchForm' => $searchForm->createView()
         ]);
     }
 

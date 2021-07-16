@@ -4,44 +4,24 @@
 
 {% block body %}
     <h1 class="container text-left h3 mb-3 font-weight-normal">Filtrer les sorties</h1>
-
     <div class="container">
         <div class="row">
-            <div class="col-md-5 bg-warning>">
-                <div class="my-3>">
-                    <label for="choixCampus">Campus</label>
-                    <select>
-                        <option> Tous</option>
-                        {% for c in campus %}
-                            <option> {{ c.nom }}</option>
-                        {% endfor  %}
-                    </select>
-                </div>
-
-                <div class="my-3">
-                    <label for="nomsortie">Le nom de la sortie contient</label>
-                    <input type="search" name="nomsortie" id="nomsortie" >
-                </div>
-
-                <div class="my-3">
-                    <label for="datedebut">Entre</label>
-                    <input type="date" name="datedebut" id="datedebut " >
-                    <label for="datefin">et</label>
-                    <input type="date" name="datefin" id="datefin" >
-                </div>
+            <div class="col-md-4">
+            {{ form_start(searchForm) }}
+                {{ form_row(searchForm.campus) }}
+                {{ form_row(searchForm.search) }}
             </div>
-
-            <div class="col-md-2">
-                <input type="checkbox" name="jorganise" id="datedebut" > Organisateur/trice<br>
-                <input type="checkbox" name="jorganise" id="datedebut" > Incrit/e<br>
-                <input type="checkbox" name="jorganise" id="datedebut" > Pas incrit/e<br>
-                <input type="checkbox" name="jorganise" id="datedebut" > Passées
+            <div class="pt-3 col-md-3">
+                {{ form_row(searchForm.organiser) }}
+                {{ form_row(searchForm.registered) }}
+                {{ form_row(searchForm.notRegistered) }}
+                {{ form_row(searchForm.passed) }}
             </div>
-
             <div class="col-md">
-                <button class="btn btn-warning" type="submit" >Rechercher</button>
+                <button class="px-3 py-3 mt-5 btn btn-warning" type="submit" formnovalidate>Rechercher</button>
             </div>
         </div>
+        {{ form_end(searchForm) }}
     </div>
 
         <table class="mt-3 table">
@@ -58,7 +38,7 @@
                 </tr>
             </thead>
             <tbody>
-            {% for sortie in sortiesValid %}
+            {% for sortie in sortiesArray %}
             <tr>
                 <th scope="col">{{ sortie.nom }}</th>
                 <td>{{ sortie.dateHeureDebut|date('d-m-Y H:i')}}</td>
