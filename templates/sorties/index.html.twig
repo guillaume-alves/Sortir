@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello SortiesController!{% endblock %}
+{% block title %}Oui.sorties !{% endblock %}
 
 {% block body %}
     <h1 class="container text-left h3 mb-3 font-weight-normal">Filtrer les sorties</h1>
@@ -17,8 +17,8 @@
                 {{ form_row(searchForm.notRegistered) }}
                 {{ form_row(searchForm.passed) }}
             </div>
-            <div class="col-md">
-                <button class="px-3 py-3 mt-5 btn btn-warning" type="submit" formnovalidate>Rechercher</button>
+            <div class="col-md d-flex align-items-center">
+                <button class="px-4 py-4 btn btn-warning" type="submit" formnovalidate>Rechercher</button>
             </div>
         </div>
         {{ form_end(searchForm) }}
@@ -28,7 +28,7 @@
             <thead>
                 <tr>
                     <th style="font-size: small">Nom de la sortie</th>
-                    <th style="font-size: small">Date de la sortie</th>
+                    <th style="font-size: small">Date et heure</th>
                     <th style="font-size: small">Cloture</th>
                     <th style="font-size: small">Inscrits/Places</th>
                     <th style="font-size: small">Etat</th>
@@ -76,9 +76,5 @@
             </tr>
             </tbody>
             {% endfor %}
-
         </table>
-
-    <a class="btn btn-primary" href="{{ path('app_sortie_create') }}" role="button">Créer une sortie</a>
-
 {% endblock %}

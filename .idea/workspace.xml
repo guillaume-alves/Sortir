@@ -4,8 +4,30 @@
     <list default="true" id="d14fcfba-9d9d-4755-8fc5-40206350eee9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/SortiesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SortiesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Lieu.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Lieu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Sortie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Sortie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/SearchType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SearchType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/SortieType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SortieType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/SortieRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/SortieRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account/avatar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/avatar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account/change_password.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/change_password.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/campus/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/campus/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layouts/flash_messages.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layouts/flash_messages.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layouts/nav.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layouts/nav.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/lieu/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/lieu/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/participant/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/participant/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/participant/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/participant/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reset_password/check_email.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reset_password/check_email.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reset_password/request.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reset_password/request.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reset_password/reset.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reset_password/reset.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sorties/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sorties/create.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/sorties/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sorties/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sorties/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sorties/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ville/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ville/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +245,9 @@
       <workItem from="1626413589771" duration="16319000" />
       <workItem from="1626435741888" duration="19591000" />
       <workItem from="1626456749209" duration="8483000" />
-      <workItem from="1626518038811" duration="3648000" />
+      <workItem from="1626518038811" duration="4525000" />
+      <workItem from="1626526344549" duration="4794000" />
+      <workItem from="1626534332077" duration="8653000" />
     </task>
     <servers />
   </component>

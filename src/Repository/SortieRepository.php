@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Campus;
 use App\Entity\Sortie;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -32,6 +33,24 @@ class SortieRepository extends ServiceEntityRepository
             FROM App\Entity\sortie s
             WHERE s.dateHeureDebut > :dateNowLessOneMonth'
             )->setParameter('dateNowLessOneMonth', $dateNowLessOneMonth);
+        // returns an array of Product objects
+        return $query->getResult();
+    }
+
+    /**
+     * @return Sortie[]
+     */
+    public function findAllWithinOneMonthAndCampus(Campus $campus): array
+    {
+        $dateNowLessOneMonth = date('Y-m-d H:i:s', strtotime('-30 days'));
+        $entityManager = $this->getEntityManager();
+        $query = $entityManager->createQuery(
+            'SELECT s
+            FROM App\Entity\sortie s
+            WHERE s.dateHeureDebut > :dateNowLessOneMonth
+            AND s.campus = :campus')
+            ->setParameter('dateNowLessOneMonth', $dateNowLessOneMonth)
+            ->setParameter('campus', $campus);
         // returns an array of Product objects
         return $query->getResult();
     }

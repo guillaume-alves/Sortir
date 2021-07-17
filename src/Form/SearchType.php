@@ -21,10 +21,11 @@ class SearchType extends AbstractType
             ->add('campus', EntityType::class, [
                 'class' => Campus::class,
                 'mapped' => true,
+                'empty_data' => null,
                 'placeholder' => 'Selectionnez le lieu',
             ])
             ->add('organiser', CheckboxType::class, [
-                'label' => 'organisateur',
+                'label' => 'Organisateur',
                 'required' => false
             ])
             ->add('registered', CheckboxType::class, [

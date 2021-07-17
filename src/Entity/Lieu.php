@@ -152,6 +152,6 @@ class Lieu
 
     // Pour le choice selector
     public function __toString() {
-        return $this->getNom();
+        return $this->getNom().', '.$this->getVille()->getCodePostal().' '.$this->getVille();
     }
 }

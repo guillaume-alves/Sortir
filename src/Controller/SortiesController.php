@@ -9,6 +9,7 @@ use App\Repository\EtatRepository;
 use App\Repository\ParticipantRepository;
 use App\Repository\SortieRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,6 +19,7 @@ class SortiesController extends AbstractController
 {
     /**
      * @Route("/", name="app_home")
+     * @Security("is_granted('ROLE_USER')")
      */
     public function index(Request $request, SortieRepository $sortieRepository, CampusRepository $campusRepository): Response
     {
@@ -25,6 +27,13 @@ class SortiesController extends AbstractController
 
         $searchForm = $this->createForm('App\Form\SearchType');
         $searchForm->handleRequest($request);
+
+        if($searchForm->isSubmitted() && $searchForm->isValid()) {
+            if (($searchForm->getData())['campus'] != null) {
+                $campus = $searchForm->getData()['campus'];
+                $sorties = $sortieRepository->findAllWithinOneMonthAndCampus($campus);
+            }
+        }
 
         return $this->render('sorties/index.html.twig', [
             'sorties' => $sorties,

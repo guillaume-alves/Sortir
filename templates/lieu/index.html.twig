@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Lieux{% endblock %}
+{% block title %}Oui.sorties !{% endblock %}
 
 {% block body %}
 
@@ -69,8 +69,10 @@
             </div>
             {{ form_rest(form) }}
         </div>
-        <div class="d-grid gap-2">
-            <button class="btn btn-primary" formnovalidate>Envoyer</button>
+        <div class="row">
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-primary" formnovalidate>Envoyer</button>
+            </div>
         </div>
     </div>
 </div>
