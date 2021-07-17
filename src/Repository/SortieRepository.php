@@ -20,6 +20,22 @@ class SortieRepository extends ServiceEntityRepository
         parent::__construct($registry, Sortie::class);
     }
 
+    /**
+     * @return Sortie[]
+     */
+    public function findAllWithinOneMonth(): array
+    {
+        $dateNowLessOneMonth = date('Y-m-d H:i:s', strtotime('-30 days'));
+        $entityManager = $this->getEntityManager();
+        $query = $entityManager->createQuery(
+            'SELECT s
+            FROM App\Entity\sortie s
+            WHERE s.dateHeureDebut > :dateNowLessOneMonth'
+            )->setParameter('dateNowLessOneMonth', $dateNowLessOneMonth);
+        // returns an array of Product objects
+        return $query->getResult();
+    }
+
     // /**
     //  * @return Sortie[] Returns an array of Sortie objects
     //  */

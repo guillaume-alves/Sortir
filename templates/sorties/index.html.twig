@@ -38,7 +38,7 @@
                 </tr>
             </thead>
             <tbody>
-            {% for sortie in sortiesArray %}
+            {% for sortie in sorties %}
             <tr>
                 <th scope="col">{{ sortie.nom }}</th>
                 <td>{{ sortie.dateHeureDebut|date('d-m-Y H:i')}}</td>
