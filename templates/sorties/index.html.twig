@@ -61,7 +61,7 @@
                     </a><br>
                     {% endif %}
 
-                    {% if app.user not in sortie.getParticipant %}
+                    {% if app.user not in sortie.getParticipant and sortie.etat == 'Ouverte' %}
                         <a id="register-link" href="{{ path('app_sortie_subscribe', {id: sortie.id}) }}">
                             S'inscrire
                         </a><br>

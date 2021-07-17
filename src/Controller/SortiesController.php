@@ -71,6 +71,8 @@ class SortiesController extends AbstractController
         {
             $sortie->setOrganisateur($participantRepository->findOneBy(['id' => $userId]));
             $sortie->setCampus($userCampus);
+            $participant = $participantRepository->findOneBy(['id' => $userId] );
+            $sortie->addParticipant($participant);
 
             $em->persist($sortie);
             $em->flush();

@@ -8,40 +8,38 @@
         <h3 class="mb-3 text-center"> {{ sortie.nom }} </h3>
         <p class="mb-5 lead text-center">Organisée par <strong>{{ sortie.organisateur.prenom }} {{ sortie.organisateur.nom }}</strong>
             #{{ sortie.campus }}</p>
-
-        <div class="row">
-            <div class="col-md-6">
-                <p> <strong>Durée :</strong> {{ sortie.duree }} minutes</p>
-            </div>
-            <div class="col-md-6">
-                <p> <strong>Date limite d'inscription :</strong> {{ sortie.dateLimiteInscription|date('Y-m-d H:i:s') }} </p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <p> <strong>Nombre de places :</strong> {{ sortie.nbInscriptionsMax }}</p>
-            </div>
-            <div class="col-md-6">
-                <p> <strong>Date et heure de début :</strong> {{ sortie.dateHeureDebut|date('Y-m-d H:i:s') }} </p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <p> <strong>Lieu :</strong> {{ sortie.lieu }} </p>
-            </div>
-            <div class="col-md-6">
-                <p> <strong>Ville :</strong> {{ sortie.lieu.ville }} </p>
-            </div>
-        </div>
-
         <div class="row">
             <div class="col-md-6">
                 <p> <strong>Description :</strong> {{ sortie.infosSortie }} </p>
             </div>
             <div class="col-md-6">
+                <p> <strong>Lieu :</strong> {{ sortie.lieu }} </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p> <strong>Durée :</strong> {{ sortie.duree }} minutes</p>
+            </div>
+            <div class="col-md-6">
+                <p> <strong>Date et heure de début :</strong> {{ sortie.dateHeureDebut|date('d-m-Y H:i') }} </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <p> <strong>Nombre d'inscrits/places :</strong> <td>{{ sortie.participant|length }}/{{ sortie.nbInscriptionsMax }} </td></p>
+            </div>
+            <div class="col-md-6">
+                <p> <strong>Date limite d'inscription :</strong> {{ sortie.dateLimiteInscription|date('d-m-Y') }} </p>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
                 <p> <strong>Participants inscrits :</strong></p>
+            </div>
+            <div class="col-md-6">
                 <table class="table">
                     <thead>
                         <tr>
