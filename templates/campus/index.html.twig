@@ -2,7 +2,9 @@
 
 {% block title %}Oui.sorties !{% endblock %}
 
-    {# table listing all cities #}
+{% block body %}
+
+    {# table listing all campus #}
     <div class="col-md-4 container">
         <table class="table">
             <thead>
@@ -46,10 +48,11 @@
                     {{ form_row(form.nom) }}
                 </div>
             </div>
-            {{ form_rest(form) }}
+                {{ form_rest(form) }}
             <div class="d-grid gap-2">
                 <button class="btn btn-primary" formnovalidate>Envoyer</button>
             </div>
+            {{ form_end(form) }}
         </div>
     </div>
 
