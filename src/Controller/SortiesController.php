@@ -21,19 +21,40 @@ class SortiesController extends AbstractController
      * @Route("/", name="app_home")
      * @Security("is_granted('ROLE_USER')")
      */
-    public function index(Request $request, SortieRepository $sortieRepository, CampusRepository $campusRepository): Response
+    public function index(Request $request, SortieRepository $sortieRepository): Response
     {
         $sorties = $sortieRepository->findAllWithinOneMonth();
 
         $searchForm = $this->createForm('App\Form\SearchType');
         $searchForm->handleRequest($request);
-
+        $q='';
         if($searchForm->isSubmitted() && $searchForm->isValid()) {
+           /* $criteres = $searchForm->getData();
+            //dd($criteres);
+            $messorties=$sortieRepository->searchsortie($criteres);*/
+
             if (($searchForm->getData())['campus'] != null) {
                 $campus = $searchForm->getData()['campus'];
                 $sorties = $sortieRepository->findAllWithinOneMonthAndCampus($campus);
+
             }
-        }
+            if (($searchForm->getData())['search'] != null) {
+                $mot = $searchForm->getData()['search'];
+                $sorties = $sortieRepository->findkeywords($mot, $q);
+
+            }
+
+            if (($searchForm->getData())['datedebut']!= null && ($searchForm->getData())['datefin']!= null) {
+                $datedebut = $searchForm->getData()['datedebut'];
+                $datefin = $searchForm->getData()['datefin'];
+                $sorties = $sortieRepository->findperiod($datedebut, $datefin);
+            } elseif (($searchForm->getData())['datedebut']== null|| ($searchForm->getData())['datefin']== null){
+                $this->addFlash('success', "Veuillez saisir les deux dates !");
+            }
+
+
+
+       }
 
         return $this->render('sorties/index.html.twig', [
             'sorties' => $sorties,
