@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d14fcfba-9d9d-4755-8fc5-40206350eee9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210719140950.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SortiesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SortiesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/SearchType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SearchType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account/avatar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/avatar.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/layouts/nav.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layouts/nav.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
