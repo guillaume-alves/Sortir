@@ -34,7 +34,10 @@ class RegistrationFormType extends AbstractType
                     'class' => Campus::class,
                     'mapped' => true,
                     'placeholder' => 'Selectionnez votre campus',
-                ])
+                    'constraints' => [
+                        new NotBlank([
+                            'message' => 'Please enter a campus',
+                        ])]])
                 ->add('agreeTerms', CheckboxType::class, [
                     'mapped' => false,
                     'label' => "J'accepte les CGU.",
