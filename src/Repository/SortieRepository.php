@@ -55,6 +55,44 @@ class SortieRepository extends ServiceEntityRepository
         return $query->getResult();
     }
 
+    /**
+     * @return Sortie[]
+     */
+    public function findkeywords($nom): array
+    {
+        //$dateNowLessOneMonth = date('Y-m-d H:i:s', strtotime('-30 days'));
+        $entityManager = $this->getEntityManager();
+            $query = $entityManager->createQuery(
+                "SELECT s
+                FROM App\Entity\sortie s
+                WHERE s.nom LIKE :nom")
+                //->setParameter('dateNowLessOneMonth', $dateNowLessOneMonth)
+                ->setParameter('nom', '%'.$nom.'%');
+            // returns an array of Product objects
+
+
+        return $query->getResult();
+    }
+
+    /**
+     * @return Sortie[]
+     */
+    public function findperiod($datedebut, $datefin): array
+    //affiche les sorties dont la date de sortie est comprise entre la période choisie
+    {
+        //$dateNowLessOneMonth = date('Y-m-d H:i:s', strtotime('-30 days'));
+        $entityManager = $this->getEntityManager();
+        $query = $entityManager->createQuery(
+            'SELECT s
+            FROM App\Entity\sortie s
+            WHERE s.dateHeureDebut BETWEEN :datedebut 
+            AND :datefin' )
+            //->setParameter('dateNowLessOneMonth', $dateNowLessOneMonth)
+            ->setParameter('datedebut', $datedebut)
+            ->setParameter('datefin', $datefin);
+        // returns an array of Product objects
+        return $query->getResult();
+    }
     // /**
     //  * @return Sortie[] Returns an array of Sortie objects
     //  */

@@ -21,19 +21,34 @@ class SortiesController extends AbstractController
      * @Route("/", name="app_home")
      * @Security("is_granted('ROLE_USER')")
      */
-    public function index(Request $request, SortieRepository $sortieRepository, CampusRepository $campusRepository): Response
+    public function index(Request $request, SortieRepository $sortieRepository): Response
     {
         $sorties = $sortieRepository->findAllWithinOneMonth();
 
         $searchForm = $this->createForm('App\Form\SearchType');
         $searchForm->handleRequest($request);
-
         if($searchForm->isSubmitted() && $searchForm->isValid()) {
             if (($searchForm->getData())['campus'] != null) {
                 $campus = $searchForm->getData()['campus'];
                 $sorties = $sortieRepository->findAllWithinOneMonthAndCampus($campus);
+
             }
-        }
+
+            elseif (($searchForm->getData())['search'] != null) {
+            $mot = $searchForm->getData()['search'];
+            $sorties = $sortieRepository->findkeywords($mot);
+            }
+
+            elseif (($searchForm->getData())['datedebut']!= null && ($searchForm->getData())['datefin']!= null) {
+                $datedebut = $searchForm->getData()['datedebut'];
+                $datefin = $searchForm->getData()['datefin'];
+                $sorties = $sortieRepository->findperiod($datedebut, $datefin);
+            }
+            /*
+             * elseif (($searchForm->getData())['datedebut']== null|| ($searchForm->getData())['datefin']== null){
+                $this->addFlash('success', "Veuillez saisir les deux dates !");
+             */
+       }
 
         return $this->render('sorties/index.html.twig', [
             'sorties' => $sorties,
@@ -77,7 +92,7 @@ class SortiesController extends AbstractController
             $em->persist($sortie);
             $em->flush();
 
-            $this->addFlash('success', 'Une nouvelle sortie a été crée');
+            $this->addFlash('success', 'Une nouvelle sortie a été créée');
             return $this->redirectToRoute('app_home');
         }
 

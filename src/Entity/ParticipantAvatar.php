@@ -26,11 +26,6 @@ class ParticipantAvatar implements  \Serializable
      */
     private $id;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
@@ -38,12 +33,15 @@ class ParticipantAvatar implements  \Serializable
 
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
-     *
      * @Vich\UploadableField(mapping="participant_image", fileNameProperty="imageName")
-     *
      * @var File|null
      */
     private $imageFile;
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
 
     public function getImageName(): ?string
     {
