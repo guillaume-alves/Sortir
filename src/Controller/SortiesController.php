@@ -92,7 +92,7 @@ class SortiesController extends AbstractController
             $em->persist($sortie);
             $em->flush();
 
-            $this->addFlash('success', 'Une nouvelle sortie a été crée');
+            $this->addFlash('success', 'Une nouvelle sortie a été créée');
             return $this->redirectToRoute('app_home');
         }
 

@@ -26,18 +26,16 @@ class SearchType extends AbstractType
                 'empty_data' => null,
                 'placeholder' => 'Sélectionnez le campus',
             ])
-
-        ->add('datedebut',DateType::class, array(
-            'label' => "Entre le",
-            'widget' => 'single_text',
-            'empty_data' => '',
-            'attr' => array('class' => 'form-control', 'style' => 'line-height: 20px;')))
-        ->add('datefin',DateType::class, array(
-            'label' => "et",
-            'widget' => 'single_text',
-            'empty_data' => '',
-            'attr' => array('class' => 'form-control', 'style' => 'line-height: 20px;')))
-
+            ->add('datedebut',DateType::class, array(
+                'label' => "Entre le",
+                'widget' => 'single_text',
+                'empty_data' => '',
+                'attr' => array('class' => 'form-control', 'style' => 'line-height: 20px;')))
+            ->add('datefin',DateType::class, array(
+                'label' => "et",
+                'widget' => 'single_text',
+                'empty_data' => '',
+                'attr' => array('class' => 'form-control', 'style' => 'line-height: 20px;')))
             ->add('organiser', CheckboxType::class, [
                 'label' => 'Organisateur',
                 'required' => false
