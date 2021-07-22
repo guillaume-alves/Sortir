@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d14fcfba-9d9d-4755-8fc5-40206350eee9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210719140950.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/SortiesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SortiesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/SearchType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SearchType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/SortieRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/SortieRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/sorties/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sorties/index.html.twig" afterDir="false" />
     </list>

@@ -10,14 +10,22 @@
             {{ form_start(searchForm) }}
                 {{ form_row(searchForm.campus) }}
                 {{ form_row(searchForm.search) }}
-                {{ form_row(searchForm.datedebut) }}
-                {{ form_row(searchForm.datefin) }}
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ form_row(searchForm.datedebut) }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form_row(searchForm.datefin) }}
+                    </div>
+                </div>
             </div>
-            <div class="pt-3 col-md-3">
-                {{ form_row(searchForm.organiser) }}
-                {{ form_row(searchForm.registered) }}
-                {{ form_row(searchForm.notRegistered) }}
-                {{ form_row(searchForm.passed) }}
+            <div class="col-md-3 d-flex align-items-center">
+                <div class="">
+                    {{ form_row(searchForm.organiser) }}
+                    {{ form_row(searchForm.registered) }}
+                    {{ form_row(searchForm.notRegistered) }}
+                    {{ form_row(searchForm.passed) }}
+                </div>
             </div>
             <div class="col-md d-flex align-items-center">
                 <button class="px-4 py-4 btn btn-warning" type="submit" formnovalidate>Rechercher</button>

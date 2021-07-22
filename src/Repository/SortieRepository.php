@@ -64,10 +64,10 @@ class SortieRepository extends ServiceEntityRepository
         $entityManager = $this->getEntityManager();
             $query = $entityManager->createQuery(
                 "SELECT s
-            FROM App\Entity\sortie s
-            WHERE s.nom LIKE :nom ")
+                FROM App\Entity\sortie s
+                WHERE s.nom LIKE :nom")
                 //->setParameter('dateNowLessOneMonth', $dateNowLessOneMonth)
-                ->setParameter('nom', $nom);
+                ->setParameter('nom', '%'.$nom.'%');
             // returns an array of Product objects
 
 
